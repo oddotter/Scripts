@@ -1,0 +1,311 @@
+Caleb Kingsbury <caleb.kingsbury@gmail.com>
+	
+Mon, Aug 31, 2:33 PM
+	
+to me
+#!/bin/bash
+#######Software Installation Menu########
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+BCyan='\033[4;36m'
+Blue='\033[0;34m'
+#######Version 1.0#######################
+################NOTES#############################################################
+#Info on menu creation can be found https://techstop.github.io/menu-bash-script/ ####
+## Software Check is a copy paste from the Status script #########################
+
+
+######################Software Check######################################
+
+{
+echo "SOFTWARE"
+echo -ne "PostgreSQL Installed?"
+{
+find /etc/pam.d/postgresql
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e "...................YES"
+else
+    echo -e "...................NO"
+fi
+
+echo -ne "Libpqxx Installed?"
+{
+find /usr/local/lib/libpqxx*
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e "......................YES"
+else
+    echo -e "......................NO"
+fi
+
+echo -ne "Utf8proc Installed?"
+{
+find /usr/local/include/utf8proc*
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e ".....................YES"
+else
+    echo -e ".....................NO"
+fi
+
+echo -ne "Sqlite-autoconf-3260000 Installed?"
+{
+find /usr/bin/sqlite3
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e "......YES"
+else
+    echo -e "......NO"
+fi
+
+echo -ne "Apr Installed?"
+{
+find /usr/local/apr/include/apr-1/apr.h
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e "..........................YES"
+else
+    echo -e "..........................NO"
+fi
+
+echo -ne "Apr-util Installed?"
+{
+find /usr/local/apr/lib/apr-util-1
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e ".....................YES"
+else
+    echo -e ".....................NO"
+fi
+
+echo -ne "Subversion Installed?"
+{
+find /usr/local/include/subversion-1
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e "...................YES"
+else
+    echo -e "...................NO"
+fi
+
+echo -ne "Libvdpau Installed?"
+{
+find /usr/local/lib/libvdpau.so
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e ".....................YES"
+else
+    echo -e ".....................NO"
+fi
+
+echo -ne "FFMPEG Installed?"
+{
+find /usr/local/bin/ffmpeg
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e ".......................YES"
+else
+    echo -e ".......................NO"
+fi
+
+echo -ne "MPlayer Installed?"
+{
+find /usr/local/bin/mplayer
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e "......................YES"
+else
+    echo -e "......................NO"
+fi
+
+echo -ne "VMware Installed?"
+{
+find /etc/vmware
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e ".......................YES"
+else
+    echo -e ".......................NO"
+fi
+
+echo -ne "Netbeans Installed?"
+{
+find /usr/local/netbeans-8.2/bin/netbeans
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e ".....................YES"
+else
+    echo -e ".....................NO"
+fi
+
+echo -ne "Boost Installed?"
+{
+find /usr/lib/boost
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e "........................YES"
+else
+    echo -e "........................NO"
+fi
+
+echo -ne "Gnat Installed?"
+{
+find /usr/local/bin/gnat
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e ".........................YES"
+else
+    echo -e ".........................NO"
+fi
+
+echo -ne "Codepeer Installed?"
+{
+find /opt/codepeer/bin/codepeer
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e ".....................YES"
+else
+    echo -e ".....................NO"
+fi
+
+echo -ne "SmartSVN Installed?"
+{
+find /opt/smartsvn/bin
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e ".....................YES"
+else
+    echo -e ".....................NO"
+fi
+
+echo -ne "SmartGit Installed?"
+{
+find /opt/smartgit/bin
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e ".....................YES"
+else
+    echo -e ".....................NO"
+fi
+
+echo -ne "SmartSynchronize Installed?"
+{
+find /opt/smartsynchronize/bin
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e ".............YES"
+else
+    echo -e ".............NO"
+fi
+
+echo -ne "Scenebuilder Installed?"
+{
+yum list installed | grep -i scenebuilder
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e ".................YES"
+else
+    echo -e ".................NO"
+fi
+
+echo -ne "MySQL Installed?"
+{
+find /usr/bin/mysql
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e "........................YES"
+else
+    echo -e "........................NO"
+fi
+
+echo -ne "Protobuf Installed?"
+{
+find /usr/local/include/google/protobuf
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    echo -e ".....................YES"
+else
+    echo -e ".....................NO"
+fi
+}
+
+
+
+############################################################
+menu_option_one()  {
+echo "APR"
+}
+menu_option_two()  {
+echo "APR-UTILS"
+}
+
+press_enter() {
+echo ""
+echo -n "" Press Enter to conmtinue ""
+read
+clear
+}
+
+incorrect_selection() {
+  echo "Incorrect Selection! Try again."
+}
+
+until [ "$selection" = "0" ]; do
+  clear
+  echo ""
+  echo " 1 - APR"
+  echo " 2 - APR-UTILS"
+  echo " 3 - BOOST"
+  echo " 4 - CODEPEER"
+  echo " 5 - FFMPEG"
+  echo " 6 - GNAT"
+  echo " 7 - JAVA-JDK"
+  echo " 8 - LIBPQXX"
+  echo " 9 - LIBVDPAU"
+  echo " 10 - MPLAYER"
+  echo " 11 - MYSQL"
+  echo " 12 - NETBEANS"
+  echo " 13 - POSTGRESQL"
+  echo " 14 - PROTOBUF"
+  echo " 15 - SCENEBUILDER"
+  echo " 16 - SMARTGIT"
+  echo " 17 - SMARTSVN"
+  echo " 18 - SMARTSYNCHRONIZE"
+  echo " 19 - SQLITE-AUTOCONF"
+  echo " 20 - SUBVERSION"
+  echo " 21 - UTF8PROC"
+  echo " 22 - VMWARE_PLAYER"
+  echo " 0 - Exit"
+  echo ""
+  echo -n " Enter selection: "
+  read selection
+  echo ""
+  case $selection in
+1 ) clear ; echo "APR" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/apr/apr.sh ; echo " Installation Complete! " ;;
+2 ) clear ; echo "APR-UTILS" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/apr-util/apr-util.sh ; echo " Installation Complete! " ;;
+3 ) clear ; echo "BOOST";sh /data/REPOS/Dev-Laptop-scripts/Applications/boost/boost.sh ; echo " Installation Complete! " ;;
+4 ) clear ; echo "CODEPEER";sh /data/REPOS/Dev-Laptop-scripts/Applications/codepeer/codepeer.sh ; echo " Installation Complete! " ;;
+5 ) clear ; echo echo "FFMPEG";sh /data/REPOS/Dev-Laptop-scripts/Applications/ffmpeg/ffmpeg.sh ; echo " Installation Complete! " ;;
+6 ) clear ; echo "GNAT" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/gnat/gnat.sh ; echo " Installation Complete! " ;;
+7 ) clear ; echo "JAVA-JDK" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/java-jdk/java-jdk.sh ; echo " Installation Complete! " ;;
+8 ) clear ; echo "LIBPQXX" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/libpqxx/libpqxx.sh ; echo " Installation Complete! " ;;
+9 ) clear ; echo "LIBVDPAU" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/libvdpau/libvdpau.sh ; echo " Installation Complete! " ;;
+10 ) clear ; echo "MPLAYER" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/mplayer/mplayer.sh ; echo " Installation Complete! " ;;
+11 ) clear ; echo "MYSQL" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/mysql/mysql.sh ; echo " Installation Complete! " ;;
+12 ) clear ; echo  "NETBEANS" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/netbeans/neatbeans.sh ; echo " Installation Complete! " ;;
+13 ) clear ; echo "POSTGRESQL" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/postgresql/postgresql.sh ; echo " Installation Complete! " ;;
+14 ) clear ; echo "PROTOBUF" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/protobu/protobuf.sh ; echo " Installation Complete! " ;;
+15 ) clear ; echo "SCENEBUILDER" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/scenebuilder/scenebuilder.sh ; echo " Installation Complete! " ;;
+16 ) clear ; echo "SMARTGIT" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/smartgit/smartgit.sh ; echo " Installation Complete! " ;;
+17 ) clear ; echo "SMARTSVN" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/smartsvn/smartsvn.sh ; echo " Installation Complete! " ;;
+18 ) clear ; echo "SMARTSYNCHRONIZE" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/smartsynchronize/smartsynchronize.sh ; echo " Installation Complete! " ;;
+19 ) clear ; echo "SQLITE-AUTOCONF" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/sqlite-autoconf/sqlite-autoconf.sh ; echo " Installation Complete! " ;;
+20 ) clear ; echo "SUBVERSION" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/subversion/subversion.sh ; echo " Installation Complete! " ;;
+21 ) clear ; echo "UTF8PROC" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/utf8proc/utf8proc.sh ; echo " Installation Complete! " ;;
+22 ) clear ; echo "VMWARE_PLAYER" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/vmware/vmware.sh ; echo " Installation Complete! " ;;
+0 ) clear ; exit ;;
+* ) clear ; incorrect_selection ; press enter ;;
+  esac
+done
