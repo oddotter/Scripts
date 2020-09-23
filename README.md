@@ -21,3 +21,6 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 Please make sure to update tests as appropriate.
 
 ## License
+
+
+![Image of Folder](https://github.com/mairin/red-hat-icons/blob/master/05%20Document/Icon_RH_Document_Folder-Open_RGB_Flat.svg)
