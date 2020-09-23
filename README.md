@@ -1,6 +1,6 @@
 # Scripts
 
-Scripts is a Bash library for automizing SA tasks in a linux enviroment.
+Scripts is a Bash library for automizing SA tasks in a linux enviroment. background: url('https://api.iconify.design/logos:redhat.svg') no-repeat center center / contain;
 
 ## Installation/Copy
 
