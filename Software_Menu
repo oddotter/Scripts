@@ -8,7 +8,7 @@ Blue='\033[0;34m'
 #######Version 1.0#######################
 ################NOTES#############################################################
 #Info on menu creation can be found https://techstop.github.io/menu-bash-script/ ####
-## Software Check is a copy paste from the Status script #########################
+## Software Check is a copy paste from statuscheck script #########################
 
 
 ######################Software Check######################################
