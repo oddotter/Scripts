@@ -12,12 +12,12 @@ Blue='\033[0;34m'
 
 
 ######################Software Check######################################
-
+##Adding * to the end of the /path/of/installed/software* will help with version updates
 {
 echo "SOFTWARE"
-echo -ne "PostgreSQL Installed?"
+echo -ne "SoftwareNameHere?"
 {
-find /etc/pam.d/postgresql
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e "...................YES"
@@ -25,9 +25,9 @@ else
     echo -e "...................NO"
 fi
 
-echo -ne "Libpqxx Installed?"
+echo -ne "SoftwareNameHere?"
 {
-find /usr/local/lib/libpqxx*
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e "......................YES"
@@ -35,9 +35,9 @@ else
     echo -e "......................NO"
 fi
 
-echo -ne "Utf8proc Installed?"
+echo -ne "SoftwareNameHere?"
 {
-find /usr/local/include/utf8proc*
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e ".....................YES"
@@ -45,9 +45,9 @@ else
     echo -e ".....................NO"
 fi
 
-echo -ne "Sqlite-autoconf-3260000 Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /usr/bin/sqlite3
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e "......YES"
@@ -55,9 +55,9 @@ else
     echo -e "......NO"
 fi
 
-echo -ne "Apr Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /usr/local/apr/include/apr-1/apr.h
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e "..........................YES"
@@ -65,9 +65,9 @@ else
     echo -e "..........................NO"
 fi
 
-echo -ne "Apr-util Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /usr/local/apr/lib/apr-util-1
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e ".....................YES"
@@ -75,9 +75,9 @@ else
     echo -e ".....................NO"
 fi
 
-echo -ne "Subversion Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /usr/local/include/subversion-1
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e "...................YES"
@@ -85,9 +85,9 @@ else
     echo -e "...................NO"
 fi
 
-echo -ne "Libvdpau Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /usr/local/lib/libvdpau.so
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e ".....................YES"
@@ -95,9 +95,9 @@ else
     echo -e ".....................NO"
 fi
 
-echo -ne "FFMPEG Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /usr/local/bin/ffmpeg
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e ".......................YES"
@@ -105,9 +105,9 @@ else
     echo -e ".......................NO"
 fi
 
-echo -ne "MPlayer Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /usr/local/bin/mplayer
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e "......................YES"
@@ -115,9 +115,9 @@ else
     echo -e "......................NO"
 fi
 
-echo -ne "VMware Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /etc/vmware
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e ".......................YES"
@@ -125,9 +125,9 @@ else
     echo -e ".......................NO"
 fi
 
-echo -ne "Netbeans Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /usr/local/netbeans-8.2/bin/netbeans
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e ".....................YES"
@@ -135,9 +135,9 @@ else
     echo -e ".....................NO"
 fi
 
-echo -ne "Boost Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /usr/lib/boost
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e "........................YES"
@@ -145,9 +145,9 @@ else
     echo -e "........................NO"
 fi
 
-echo -ne "Gnat Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /usr/local/bin/gnat
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e ".........................YES"
@@ -155,9 +155,9 @@ else
     echo -e ".........................NO"
 fi
 
-echo -ne "Codepeer Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /opt/codepeer/bin/codepeer
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e ".....................YES"
@@ -165,9 +165,9 @@ else
     echo -e ".....................NO"
 fi
 
-echo -ne "SmartSVN Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /opt/smartsvn/bin
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e ".....................YES"
@@ -175,9 +175,9 @@ else
     echo -e ".....................NO"
 fi
 
-echo -ne "SmartGit Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /opt/smartgit/bin
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e ".....................YES"
@@ -185,9 +185,9 @@ else
     echo -e ".....................NO"
 fi
 
-echo -ne "SmartSynchronize Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /opt/smartsynchronize/bin
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e ".............YES"
@@ -195,7 +195,7 @@ else
     echo -e ".............NO"
 fi
 
-echo -ne "Scenebuilder Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
 yum list installed | grep -i scenebuilder
 } &> /dev/null 2>&1
@@ -205,9 +205,9 @@ else
     echo -e ".................NO"
 fi
 
-echo -ne "MySQL Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /usr/bin/mysql
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e "........................YES"
@@ -215,9 +215,9 @@ else
     echo -e "........................NO"
 fi
 
-echo -ne "Protobuf Installed?"
+echo -ne "SoftwareNameHere Installed?"
 {
-find /usr/local/include/google/protobuf
+find /path/of/installed/software
 } &> /dev/null 2>&1
 if [ $? -eq 0 ]; then
     echo -e ".....................YES"
@@ -230,10 +230,10 @@ fi
 sleep 4
 ############################################################
 menu_option_one()  {
-echo "APR"
+echo "SoftwareNameHere"
 }
 menu_option_two()  {
-echo "APR-UTILS"
+echo "SoftwareNameHere"
 }
 
 press_enter() {
@@ -250,56 +250,56 @@ incorrect_selection() {
 until [ "$selection" = "0" ]; do
   clear
   echo ""
-  echo " 1 - APR"
-  echo " 2 - APR-UTILS"
-  echo " 3 - BOOST"
-  echo " 4 - CODEPEER"
-  echo " 5 - FFMPEG"
-  echo " 6 - GNAT"
-  echo " 7 - JAVA-JDK"
-  echo " 8 - LIBPQXX"
-  echo " 9 - LIBVDPAU"
-  echo " 10 - MPLAYER"
-  echo " 11 - MYSQL"
-  echo " 12 - NETBEANS"
-  echo " 13 - POSTGRESQL"
-  echo " 14 - PROTOBUF"
-  echo " 15 - SCENEBUILDER"
-  echo " 16 - SMARTGIT"
-  echo " 17 - SMARTSVN"
-  echo " 18 - SMARTSYNCHRONIZE"
-  echo " 19 - SQLITE-AUTOCONF"
-  echo " 20 - SUBVERSION"
-  echo " 21 - UTF8PROC"
-  echo " 22 - VMWARE_PLAYER"
+  echo " 1 - SoftwareNameHere"
+  echo " 2 - SoftwareNameHere"
+  echo " 3 - SoftwareNameHere"
+  echo " 4 - SoftwareNameHere"
+  echo " 5 - SoftwareNameHere"
+  echo " 6 - SoftwareNameHere"
+  echo " 7 - SoftwareNameHere"
+  echo " 8 - SoftwareNameHere"
+  echo " 9 - SoftwareNameHere"
+  echo " 10 - SoftwareNameHere"
+  echo " 11 - SoftwareNameHere"
+  echo " 12 - SoftwareNameHere"
+  echo " 13 - SoftwareNameHere"
+  echo " 14 - SoftwareNameHere"
+  echo " 15 - SoftwareNameHere"
+  echo " 16 - SoftwareNameHere"
+  echo " 17 - SoftwareNameHere"
+  echo " 18 - SoftwareNameHere"
+  echo " 19 - SoftwareNameHere"
+  echo " 20 - SSoftwareNameHere"
+  echo " 21 - SoftwareNameHere"
+  echo " 22 - SoftwareNameHere"
   echo " 0 - Exit"
   echo ""
   echo -n " Enter selection: "
   read selection
   echo ""
   case $selection in
-1 ) clear ; echo "APR" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/apr/apr.sh ; echo " Installation Complete! " ;;
-2 ) clear ; echo "APR-UTILS" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/apr-util/apr-util.sh ; echo " Installation Complete! " ;;
-3 ) clear ; echo "BOOST";sh /data/REPOS/Dev-Laptop-scripts/Applications/boost/boost.sh ; echo " Installation Complete! " ;;
-4 ) clear ; echo "CODEPEER";sh /data/REPOS/Dev-Laptop-scripts/Applications/codepeer/codepeer.sh ; echo " Installation Complete! " ;;
-5 ) clear ; echo echo "FFMPEG";sh /data/REPOS/Dev-Laptop-scripts/Applications/ffmpeg/ffmpeg.sh ; echo " Installation Complete! " ;;
-6 ) clear ; echo "GNAT" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/gnat/gnat.sh ; echo " Installation Complete! " ;;
-7 ) clear ; echo "JAVA-JDK" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/java-jdk/java-jdk.sh ; echo " Installation Complete! " ;;
-8 ) clear ; echo "LIBPQXX" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/libpqxx/libpqxx.sh ; echo " Installation Complete! " ;;
-9 ) clear ; echo "LIBVDPAU" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/libvdpau/libvdpau.sh ; echo " Installation Complete! " ;;
-10 ) clear ; echo "MPLAYER" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/mplayer/mplayer.sh ; echo " Installation Complete! " ;;
-11 ) clear ; echo "MYSQL" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/mysql/mysql.sh ; echo " Installation Complete! " ;;
-12 ) clear ; echo  "NETBEANS" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/netbeans/neatbeans.sh ; echo " Installation Complete! " ;;
-13 ) clear ; echo "POSTGRESQL" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/postgresql/postgresql.sh ; echo " Installation Complete! " ;;
-14 ) clear ; echo "PROTOBUF" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/protobu/protobuf.sh ; echo " Installation Complete! " ;;
-15 ) clear ; echo "SCENEBUILDER" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/scenebuilder/scenebuilder.sh ; echo " Installation Complete! " ;;
-16 ) clear ; echo "SMARTGIT" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/smartgit/smartgit.sh ; echo " Installation Complete! " ;;
-17 ) clear ; echo "SMARTSVN" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/smartsvn/smartsvn.sh ; echo " Installation Complete! " ;;
-18 ) clear ; echo "SMARTSYNCHRONIZE" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/smartsynchronize/smartsynchronize.sh ; echo " Installation Complete! " ;;
-19 ) clear ; echo "SQLITE-AUTOCONF" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/sqlite-autoconf/sqlite-autoconf.sh ; echo " Installation Complete! " ;;
-20 ) clear ; echo "SUBVERSION" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/subversion/subversion.sh ; echo " Installation Complete! " ;;
-21 ) clear ; echo "UTF8PROC" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/utf8proc/utf8proc.sh ; echo " Installation Complete! " ;;
-22 ) clear ; echo "VMWARE_PLAYER" ; sh /data/REPOS/Dev-Laptop-scripts/Applications/vmware/vmware.sh ; echo " Installation Complete! " ;;
+1 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+2 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+3 ) clear ; echo "SoftwareNameHere";sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+4 ) clear ; echo "SoftwareNameHere";sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+5 ) clear ; echo echo "SoftwareNameHere";sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+6 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+7 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+8 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+9 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+10 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+11 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+12 ) clear ; echo  "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+13 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+14 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+15 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+16 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+17 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+18 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+19 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+20 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+21 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
+22 ) clear ; echo "SoftwareNameHere" ; sh /path/to/installation.sh ; echo " Installation Complete! " ;;
 0 ) clear ; exit ;;
 * ) clear ; incorrect_selection ; press enter ;;
   esac
