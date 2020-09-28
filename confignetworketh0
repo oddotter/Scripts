@@ -1,0 +1,62 @@
+#!/bin/bash
+######################## Change to work for your setup!! #########################################
+# This will set up and configure your eth0 int ######################################
+########################################### Echo Coloring ##############################################
+RED='\033[0;31m'
+NC='\033[0m'
+GREEN='\033[0;32m'
+BCyan='\033[4;36m'
+Blue='\033[0;34m'
+
+#################################### configuring Network Interface #####################################
+echo -ne "${RED}Setting Ethernet adapter to eth0${NC}"
+draw_progress_bar 8
+{
+network_interface=$(nmcli device show | grep -i general.device | awk '{print $NF}' | grep -i ^e | awk '{print $NF}')
+MAC=$(ip link | grep -i link/ether | awk 'NR==1{print $2}')
+nmcli conn mod $network_interface connection.id eth0
+nmcli conn mod eth0 connection.interface-name eth0
+} &>> /home/local_admin/Desktop/Dev-laptop-log.txt
+echo -e "${GREEN}..........Ethernet adapter set to eth0${NC}"
+sleep 5s
+echo -ne "${RED}Setting the IP Address${NC}"
+{
+nmcli conn mod eth0 ipv4.addresses $var1/24
+nmcli conn mod eth0 ipv4.method manual
+nmcli conn mod eth0 ipv4.dns x.x.x.x,y.y.y.y
+nmcli conn mod eth0 ipv4.dns-search DNSNAMEHERE
+nmcli conn mod eth0 connection.autoconnect yes
+nmcli conn mod eth0 ipv4.routes "x.x.x.x/4 0.0.0.0"
+nmcli conn mod eth0 +ipv4.routes "x.x.0.0/16 0.0.0.0"
+nmcli conn mod eth0 +ipv4.routes "x.x.0.0/16 x.x.x.x"
+nmcli conn mod eth0 +ipv4.routes "0.0.0.0/16 0.0.0.0"
+nmcli conn mod eth0 ipv4.route-metric 100
+nmcli conn mod eth0 ipv4.ignore-auto-routes yes
+nmcli conn mod eth0 ipv4.ignore-auto-dns yes
+nmcli conn mod eth0 ipv6.method ignore
+nmcli conn reload
+{
+find /etc/sysconfig/network-scripts/ifcfg-eth0
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    break
+else
+    mv /etc/sysconfig/network-scripts/ifcfg-$network_interface /etc/sysconfig/network-scripts/ifcfg-eth0
+fi
+
+sed -ire "s/NAME=\"$network_interface\"/NAME=\"eth0\"/" /etc/sysconfig/network-scripts/ifcfg-eth0
+sed -ire "s/DEVICE=\"$network_interface\"/DEVICE=\"eth0\"/" /etc/sysconfig/network-scripts/ifcfg-eth0
+echo -n 'HWADDR="'$MAC\" >> /etc/sysconfig/network-scripts/ifcfg-eth0
+systemctl stop libvirtd
+systemctl disable libvirtd
+{
+find /etc/sysconfig/network-scripts/route-eth0
+} &> /dev/null 2>&1
+if [ $? -eq 0 ]; then
+    break
+else
+    mv /etc/sysconfig/network-scripts/route-* /etc/sysconfig/network-scripts/route-eth0
+fi
+rm /etc/sysconfig/network-scripts/ifcfg-eth0re
+} &>> /home/local_admin/Desktop/Dev-laptop-log.txt
+echo -e "${GREEN}..........IP Address Configured!${NC}"
