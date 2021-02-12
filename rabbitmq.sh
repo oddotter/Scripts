@@ -19,12 +19,14 @@ echo -e ${GREEN} Keys imported${NC}
 echo -e ${Blue} Creating yum repository${NC}
 cd /etc/yum.repos.d
 touch rabbitmq.repo
-echo [bintray-rabbitmq-server] > /etc/yum.repos.d/rabbitmq.repo
-echo name=bintray-rabbitmq-rpm > /etc/yum.repos.d/rabbitmq.repo
-echo baseurl=https://dl.bintray.com/rabbitmq/rpm/rabbitmq-server/v3.8.x/el/8/ > /etc/yum.repos.d/rabbitmq.repo
-echo gpgcheck=0 > /etc/yum.repos.d/rabbitmq.repo
-echo repo_gpgcheck=0 > /etc/yum.repos.d/rabbitmq.repo
-echo enabled=1 > /etc/yum.repos.d/rabbitmq.repo
+tee -a /etc/yum.repos.d/rabbitmq.repo << END
+[bintray-rabbitmq-server] 
+name=bintray-rabbitmq-rpm
+baseurl=https://dl.bintray.com/rabbitmq/rpm/rabbitmq-server/v3.8.x/el/8/
+echo gpgcheck=0 
+echo repo_gpgcheck=0
+echo enabled=1
+END
 echo -e ${Blue} Succesful${NC}
 ##### Installing Socat ####
 echo -e ${GREEN} Installing socat dependency${NC}
