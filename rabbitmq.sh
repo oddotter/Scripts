@@ -11,16 +11,20 @@ echo -e Please type in the machines hostname
 read var2
 #Importing Keys######
 echo -e ${GREEN} Importing gpg keys${NC}
+rpm --import https://github.com/rabbitmq/signing-keys/releases/download/2.0/rabbitmq-release-signing-key.asc
 rpm --import https://packagecloud.io/rabbitmq/rabbitmq-server/gpgkey
 rpm --import https://packagecloud.io/gpg.key
 echo -e ${GREEN} Keys imported${NC}
-#Copying everlang and rabbitmq rpms to localhost####
-echo -e ${Blue}Copying over rpms${NC}
-scp local_admin@RHEL8virt101:/home/local_admin/Downloads/erlang-23.2.4-1.el8.x86_64.rpm local_admin@$var2:/home/local_admin/Downloads/
-sync
-sleep 2s
-scp local_admin@RHEL8virt101:/home/local_admin/Downloads/rabbitmq-server-3.8.11-1.el8.noarch.rpm local_admin@$var2:/home/local_admin/Downloads/
-sync
+#Adding rabbit yum repository####
+echo -e ${Blue} Creating yum repository${NC}
+cd /etc/yum.repos.d
+touch rabbitmq.repo
+echo [bintray-rabbitmq-server] > /etc/yum.repos.d/rabbitmq.repo
+echo name=bintray-rabbitmq-rpm > /etc/yum.repos.d/rabbitmq.repo
+echo baseurl=https://dl.bintray.com/rabbitmq/rpm/rabbitmq-server/v3.8.x/el/8/ > /etc/yum.repos.d/rabbitmq.repo
+echo gpgcheck=0 > /etc/yum.repos.d/rabbitmq.repo
+echo repo_gpgcheck=0 > /etc/yum.repos.d/rabbitmq.repo
+echo enabled=1 > /etc/yum.repos.d/rabbitmq.repo
 echo -e ${Blue} Succesful${NC}
 ##### Installing Socat ####
 echo -e ${GREEN} Installing socat dependency${NC}
@@ -28,12 +32,11 @@ yum install socat
 sleep 2s
 ########Installing RPMs#########
 echo -e ${Blue} Installing erlang${NC}
-cd /home/local-admin/Downloads
-rpm -i erlang-23.2.4-1.el8.x86_64.rpm
+su -c 'rpm -Uvh https://download.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm'
 sleep 2s
 echo -e ${Blue} Installation complete${NC}
 echo -e ${GREEN} Installing rabbitmq-server${NC}
-rpm -i rabbitmq-server-3.8.11-1.el8.noarch.rpm
+yum install rabbitmq
 sleep 2s
 echo -e ${GREEN} Installation complete${NC]
 #####Turning on rabbitmq-server####
