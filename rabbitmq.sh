@@ -41,7 +41,7 @@ echo -e ${Blue} Installation complete${NC}
 echo -e ${GREEN} Installing rabbitmq-server${NC}
 yum install rabbitmq-server
 sleep 2s
-echo -e ${GREEN} Installation complete${NC]
+echo -e ${GREEN} Installation complete${NC}
 #####Turning on rabbitmq-server####
 echo -e ${Blue} Turning on server${NC}
 chkconfig rabbitmq-server on
