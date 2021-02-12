@@ -7,8 +7,8 @@ BCyan='\033[4;36m'
 Blue='\033[0;34m'
 ###Rabbitdq deployment script Version 1.0###########
 ###rpms found on virt101 ################## 
-echo -e Please type in the machines hostname
-read var2
+#echo -e Please type in the machines hostname
+#read var2
 #Importing Keys######
 echo -e ${GREEN} Importing gpg keys${NC}
 rpm --import https://github.com/rabbitmq/signing-keys/releases/download/2.0/rabbitmq-release-signing-key.asc
