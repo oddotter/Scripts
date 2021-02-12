@@ -35,10 +35,11 @@ sleep 2s
 ########Installing RPMs#########
 echo -e ${Blue} Installing erlang${NC}
 su -c 'rpm -Uvh https://download.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm'
+yum update
 sleep 2s
 echo -e ${Blue} Installation complete${NC}
 echo -e ${GREEN} Installing rabbitmq-server${NC}
-yum install rabbitmq
+yum install rabbitmq-server
 sleep 2s
 echo -e ${GREEN} Installation complete${NC]
 #####Turning on rabbitmq-server####
